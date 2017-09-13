@@ -1,0 +1,24 @@
+{
+  "name": "synerg-membership",
+  "version": "1.0.0",
+  "description": "Synerg'hetic - adhésions",
+  "author": "Seb Dancer-Michel <s.dancermichel@gmail.com>",
+  "private": false,
+  "repository": "https://github.com/synerghetic/synerg-membership",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "node-sass": "^4.5.3",
+    "nuxt": "^1.0.0-rc11",
+    "sass-loader": "^6.0.5"
+  },
+  "now": {
+    "name": "synerg-membership",
+    "alias": "adhesions"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "now": "now && now alias"
+  }
+}
