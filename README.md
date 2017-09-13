@@ -4,7 +4,7 @@
 
 ## Instructions
 
-`yarn` or `npm i` to download dependancies
+`yarn` or `npm i` to download dependencies
 
 `npm run dev` to start the development environment.
 
