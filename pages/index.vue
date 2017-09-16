@@ -9,8 +9,9 @@
 
       <form  method="post">
         <label for="heticmail">Entre ton mail @hetic.net</label>
-        <input type="email" name="heticmail--text" value="" placeholder="denys.chomel@hetic.net">
+        <input type="email" name="heticmail--text" value="" placeholder="denys.chomel@hetic.net" autocomplete="email">
         <input type="submit" name="heticmail--submit" value="Vérifier mon mail">
+        <input type="text" name="heticmail-imothep" value="" style='display:none;'>
       </form>
     </div>
 
@@ -90,6 +91,7 @@
           </div>
         </section>
 
+        <input type="text" name="adhesion-imothep" value="" style='display:none;'>
         <input type="submit" name="adhesion--submit" value="Adhérer à Synerg'hetic">
       </form>
     </div>
