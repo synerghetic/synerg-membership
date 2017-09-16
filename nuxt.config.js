@@ -9,7 +9,8 @@ module.exports = {
       { name: 'theme-color', content: '#ffffff' }
     ],
     link: [
-      { rel: 'stylesheet', href: '/css/normalize.css' }
+      { rel: 'stylesheet', href: '/css/normalize.css' },
+      { rel: 'stylesheet', href: '/fonts/stylesheet.css' }
     ],
     script: []
   },

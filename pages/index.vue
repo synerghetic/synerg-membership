@@ -96,8 +96,8 @@
 
     <div class="view view--confirmation">
       <span>Bienvenue parmi nous !</span>
-      <p>Tu fais maintenant partie  de la grande famille Synerg’hetic.</p>
-      <p>Un mail te sera envoyé dès que ton adhésion aura été validée. Notre Secrétaire Générale Aude reviendra vers toi pour compléter ton adhésion.</p>
+      <p>Tu fais maintenant partie de la grande famille Synerg'hetic.</p>
+      <p>Un mail te seras envoyé dès que ton adhésion aura été validée. notre Secrétaire Générale Aude reviendra vers toi pour compléter ton adhésion.</p>
     </div>
 
     <footer>
@@ -113,5 +113,7 @@ export default {
 </script>
 
 <style lang="scss">
-
+  body {
+    font-family: 'Fedra', sans-serif;
+  }
 </style>
