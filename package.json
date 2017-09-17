@@ -13,7 +13,7 @@
   },
   "now": {
     "name": "synerg-membership",
-    "alias": "adhesions"
+    "alias": "synerg-membership"
   },
   "scripts": {
     "dev": "nuxt",
