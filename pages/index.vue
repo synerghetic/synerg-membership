@@ -117,10 +117,10 @@ export default {
 <style lang="scss">
   body {
     font-family: 'Fedra', sans-serif;
-    background: rgba(73,12,102,1);
     font-size: 16px;
     line-height: 26px;
     color: #3E3E3E;
+    background: #FFFFFF;
     width: 100%;
     height: 100%;
     min-width: 100vw;
@@ -129,13 +129,18 @@ export default {
     justify-content: center;
     align-items: center;
     transition: .3s ease-out;
-    * {box-sizing: border-box;}
+    & , * {box-sizing: border-box;}
+    @media screen and (min-width: 454px) {
+      background: rgba(73,12,102,1);
+      max-width: 100%;
+      padding: 40px 0;
+      #app {border-radius: 8px;}
+    }
   }
 
   #app {
     position: relative;
     max-width: 414px;
-    // min-height: 100vh;
     height: 100%;
     padding: 0 15px;
     margin: auto;
@@ -160,6 +165,17 @@ export default {
       font-size: 16px;
       font-weight: normal;
       color: #490C66;
+      margin: 0;
+    }
+  }
+
+  footer {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 52px;
+    p {
+      font-size: 14px;
+      line-height: 24px;
       margin: 0;
     }
   }
@@ -189,11 +205,14 @@ export default {
         outline: 0;
         -webkit-appearance: none;
         border:none;
-        padding: 0 14px;
+        padding: 2px 14px 0;
         font-family: 'Fedra', sans-serif;
         color: #3E3E3E;
         margin-bottom: 20px;
         transition: .2s ease-out;
+        &::placeholder {
+          color: #929292;
+        }
         &[type='submit'] {
           background: #490C66;
           color: #FFFFFF;
