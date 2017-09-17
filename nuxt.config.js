@@ -1,6 +1,6 @@
 module.exports = {
   head: {
-    titleTemplate: 'Synerg\'hetic - adhésion',
+    titleTemplate: 'Synerg\'hetic - Formulaire d\'adhésion',
     meta: [
       { charset: 'utf-8' },
       { hid: 'description', name: 'description', content: 'Devenez adhérent à Synerg\'hetic' },
