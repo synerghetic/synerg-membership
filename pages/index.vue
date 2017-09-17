@@ -2,13 +2,13 @@
   <div id="app">
     <header>
       <h1>Synerg'hetic</h1>
-      <h2>Formulaire d'adhésions en ligne</h2>
+      <h2>Formulaire d'adhésion en ligne</h2>
     </header>
     <div class="view view--welcome">
-      <p>pour adhérer, rien de plus simple : un mail @hetic.net, quelques informations basiques, une cotisation de 16,00€, et tu pourras faire partie de Synerg'hetic !</p>
+      <p>Pour adhérer, rien de plus simple : un mail @hetic.net, quelques informations basiques, une cotisation de 16,00€, et tu pourras faire partie de Synerg'hetic !</p>
 
       <form  method="post">
-        <label for="heticmail">Entre ton mail @hetic.net</label>
+        <label for="heticmail--text">Entre ton mail @hetic.net</label>
         <input type="email" name="heticmail--text" value="" placeholder="denys.chomel@hetic.net" autocomplete="email">
         <input type="submit" name="heticmail--submit" value="Vérifier mon mail">
         <input type="text" name="heticmail-imothep" value="" style='display:none;'>
@@ -96,11 +96,11 @@
       </form>
     </div>
 
-    <div class="view view--confirmation">
+    <!-- <div class="view view--confirmation">
       <span>Bienvenue parmi nous !</span>
       <p>Tu fais maintenant partie de la grande famille Synerg'hetic.</p>
       <p>Un mail te seras envoyé dès que ton adhésion aura été validée. notre Secrétaire Générale Aude reviendra vers toi pour compléter ton adhésion.</p>
-    </div>
+    </div> -->
 
     <footer>
       <p>Si tu rencontres la moindre difficulté, notre génialissime Secrétaire Générale Aude est là pour t’aider : tu la retrouveras au bureau de Synerg’hetic ou sur les Internets.</p>
@@ -117,5 +117,94 @@ export default {
 <style lang="scss">
   body {
     font-family: 'Fedra', sans-serif;
+    background: rgba(73,12,102,1);
+    font-size: 16px;
+    line-height: 26px;
+    color: #3E3E3E;
+    width: 100%;
+    height: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s ease-out;
+    * {box-sizing: border-box;}
+  }
+
+  #app {
+    position: relative;
+    max-width: 414px;
+    // min-height: 100vh;
+    height: 100%;
+    padding: 0 15px;
+    margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    background: #FFFFFF;
+  }
+
+  header {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-weight: bold;
+      color: #490C66;
+      margin: 0 0 12px 0;
+    }
+    h2 {
+      font-size: 16px;
+      font-weight: normal;
+      color: #490C66;
+      margin: 0;
+    }
+  }
+
+  .view {
+    p {
+      margin: 0;
+    }
+    form {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      margin: 20px 0 14px 0;
+      label {
+        width: 100%;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 14px;
+        margin-bottom: 8px;
+      }
+      input {
+        width: 100%;
+        height: 50px;
+        background: #F6F6F6;
+        border-radius: 4px;
+        outline: 0;
+        -webkit-appearance: none;
+        border:none;
+        padding: 0 14px;
+        font-family: 'Fedra', sans-serif;
+        color: #3E3E3E;
+        margin-bottom: 20px;
+        transition: .2s ease-out;
+        &[type='submit'] {
+          background: #490C66;
+          color: #FFFFFF;
+          text-transform: uppercase;
+          cursor: pointer;
+          transition: .2s ease-out;
+          &:hover {
+            background: rgba(73,12,102,.7);
+          }
+        }
+      }
+    }
   }
 </style>
