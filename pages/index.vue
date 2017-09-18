@@ -4,8 +4,9 @@
       <h1>Synerg'hetic</h1>
       <h2>Formulaire d'adhésion en ligne</h2>
     </header>
+
     <div class="view view--welcome">
-      <p>Pour adhérer, rien de plus simple : un mail @hetic.net, quelques informations basiques, une cotisation de 16,00€, et tu pourras faire partie de Synerg'hetic !</p>
+      <p>Pour adhérer, rien de plus simple : un mail <strong>@hetic.net</strong>, quelques informations basiques, une cotisation de 16,00€, et tu pourras faire partie de Synerg'hetic !</p>
 
       <form  method="post">
         <label for="heticmail--text">Entre ton mail @hetic.net</label>
@@ -60,11 +61,15 @@
             <label for="address">Adresse</label>
             <input type="address" name="address" value="" placeholder="27 bis, rue du Progrès">
           </div>
-          <div class="form__group">
-            <label for="zipcode">Code postal</label>
-            <input type="zipcode" name="zipcode" value="" placeholder="93100">
-            <label for="city">Ville</label>
-            <input type="city" name="city" value="" placeholder="Montreuil">
+          <div class="form__group form-group--localization">
+            <div>
+              <label for="zipcode">Code postal</label>
+              <input type="zipcode" name="zipcode" value="" placeholder="93100">
+            </div>
+            <div>
+              <label for="city">Ville</label>
+              <input type="city" name="city" value="" placeholder="Montreuil">
+            </div>
           </div>
           <div class="form__group">
             <label for="nationality">Nationalité</label>
@@ -79,15 +84,20 @@
           </div>
           <div class="form__group">
             <label for="birthday">Date de naissance</label>
-            <input type="date" name="birthday" value="" placeholder="01/01/1996">
+            <input type="date" name="birthday">
           </div>
           <div class="form__group">
             <label for="socialsecurity">Numéro de Sécurité sociale</label>
             <input type="number" name="socialsecurity" value="" placeholder="94 1 08 75 123 45">
           </div>
-          <div class="form__group">
-            <label for="identityfile">Fournir une pièce d'identité</label>
-            <input type="file" name="identityfile">
+          <div class="form__group form-group--identity">
+            <label for="identityfile">Fournir une pièce d'identité (recto/verso)</label>
+            <div>
+              <input type="file" name="identityfile">
+            </div>
+            <div>
+              <input type="file" name="identityfile">
+            </div>
           </div>
         </section>
 
@@ -96,11 +106,12 @@
       </form>
     </div>
 
-    <!-- <div class="view view--confirmation">
+    <div class="view view--confirmation">
       <span>Bienvenue parmi nous !</span>
       <p>Tu fais maintenant partie de la grande famille Synerg'hetic.</p>
-      <p>Un mail te seras envoyé dès que ton adhésion aura été validée. notre Secrétaire Générale Aude reviendra vers toi pour compléter ton adhésion.</p>
-    </div> -->
+      <p>Un mail te sera envoyé dès que ton adhésion aura été validée. notre Secrétaire Générale Aude reviendra vers toi pour compléter ton adhésion.</p>
+      <a href="http://synerghetic.net">Revenir au site de Synerg'hetic</a>
+    </div>
 
     <footer>
       <p>Si tu rencontres la moindre difficulté, notre génialissime Secrétaire Générale Aude est là pour t’aider : tu la retrouveras au bureau de Synerg’hetic ou sur les Internets.</p>
@@ -130,6 +141,7 @@ export default {
     align-items: center;
     transition: .3s ease-out;
     & , * {box-sizing: border-box;}
+    strong {font-weight: 500;}
     @media screen and (min-width: 454px) {
       background: rgba(73,12,102,1);
       max-width: 100%;
@@ -181,9 +193,7 @@ export default {
   }
 
   .view {
-    p {
-      margin: 0;
-    }
+    p {margin: 0 0 20px;}
     form {
       width: 100%;
       height: 100%;
@@ -197,7 +207,7 @@ export default {
         line-height: 14px;
         margin-bottom: 8px;
       }
-      input {
+      input, select {
         width: 100%;
         height: 50px;
         background: #F6F6F6;
@@ -210,20 +220,85 @@ export default {
         color: #3E3E3E;
         margin-bottom: 20px;
         transition: .2s ease-out;
-        &::placeholder {
-          color: #929292;
-        }
+        &::placeholder {color: #929292;}
         &[type='submit'] {
           background: #490C66;
           color: #FFFFFF;
           text-transform: uppercase;
+          margin-bottom: 0;
           cursor: pointer;
           transition: .2s ease-out;
-          &:hover {
-            background: rgba(73,12,102,.7);
-          }
+          &:hover {background: rgba(73,12,102,.7);}
         }
       }
+      select {
+        -webkit-appearance: menulist;
+      }
+    }
+  }
+
+  .view--form {
+    form {
+      margin: 0 0 15px;
+      .form-group--localization {
+        display: flex;
+        justify-content: space-between;
+        > div:first-of-type {flex: 0 0 109px;}
+        > div:last-of-type {flex: 0 0 calc(100% - 118px);}
+      }
+      .form-group--identity {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        label {
+          flex: 1 0 100%;
+          width: 100%;
+        }
+        > div {flex: 0 0 calc(50% - 5px);}
+        input[type='file'] {
+          background: transparent;
+          color: transparent;
+          padding: 0;
+          &::-webkit-file-upload-button {
+            visibility: hidden;
+          }
+          &::before {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding-top: 2px;
+            background: #A5A5A5;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            border-radius: 4px;
+            outline: none;
+            white-space: nowrap;
+            -webkit-user-select: none;
+            cursor: pointer;
+            transition: .2s ease-out;
+            box-sizing: border-box;
+          }
+          &:hover::before,
+          &:active::before {
+            background: rgba(165,165,165,.7);
+          }
+        }
+        div:first-of-type input::before {content: 'recto';}
+        div:last-of-type input::before {content: 'verso';}
+      }
+    }
+  }
+
+  .view--confirmation {
+    a {
+      display: block;
+      font-size: 14px;
+      color: #490C66;
+      line-height: 24px;
+      text-align: center;
+      margin: 18px auto;
     }
   }
 </style>
