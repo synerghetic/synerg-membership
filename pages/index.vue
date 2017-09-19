@@ -5,8 +5,10 @@
       <h2>Formulaire d'adhésion en ligne</h2>
     </header>
 
-    <div class="view view--welcome">
-      <p>Pour adhérer, rien de plus simple : un mail <strong>@hetic.net</strong>, quelques informations basiques, une cotisation de 16,00€, et tu pourras faire partie de Synerg'hetic !</p>
+    <div class="view view--welcome" v-if="view == 1">
+      <p>Participe à nos projets rémunérés et à nos évènements exclusifs en adhérant à Synerg’hetic.</p>
+
+      <p style="font-size:14px;">Une cotisation de 16€ te sera demandée, l’adhésion est valable pour toute la durée de ta scolarité.</p>
 
       <form  method="post">
         <label for="heticmail--text">Entre ton mail @hetic.net</label>
@@ -16,7 +18,7 @@
       </form>
     </div>
 
-    <div class="view view--form">
+    <div class="view view--form" v-if="view == 2">
       <form method="post">
         <section class="basicInformation">
           <div class="form__group">
@@ -102,26 +104,35 @@
         </section>
 
         <input type="text" name="adhesion-imothep" value="" style='display:none;'>
-        <input type="submit" name="adhesion--submit" value="Adhérer à Synerg'hetic">
+        <input type="submit" name="adhesion--submit" value="Payer ton adhésion">
       </form>
     </div>
 
-    <div class="view view--confirmation">
-      <span>Bienvenue parmi nous !</span>
-      <p>Tu fais maintenant partie de la grande famille Synerg'hetic.</p>
-      <p>Un mail te sera envoyé dès que ton adhésion aura été validée. notre Secrétaire Générale Aude reviendra vers toi pour compléter ton adhésion.</p>
-      <a href="http://synerghetic.net">Revenir au site de Synerg'hetic</a>
+    <div class="view view--confirmation" v-if="view == 3">
+      <span>Nous avons bien reçu ta demande d’adhésion.</span>
+      <p>Passe au bureau signer ton adhésion à la réception du SMS de Synerg’hetic.</p>
+      <p>Tu peux d’ores et déjà nous suivre sur les réseaux sociaux :</p>
+      Boutons j'aime / follow à ajouter
     </div>
 
     <footer>
-      <p>Si tu rencontres la moindre difficulté, notre génialissime Secrétaire Générale Aude est là pour t’aider : tu la retrouveras au bureau de Synerg’hetic ou sur les Internets.</p>
+      <p>Tu rencontres un problème ?<br><strong>Passe nous voir au bureau.</strong></p>
     </footer>
   </div>
 </template>
 
 <script>
 export default {
-
+  data () {
+    return {
+      view: 1
+    }
+  },
+  methods: {
+    toView2: function () {
+      console.log('toView2')
+    }
+  }
 }
 </script>
 
@@ -138,12 +149,12 @@ export default {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
     transition: .3s ease-out;
     & , * {box-sizing: border-box;}
     strong {font-weight: 500;}
-    @media screen and (min-width: 454px) {
+    @media screen and (min-width: 494px) {
       background: rgba(73,12,102,1);
+      align-items: center;
       max-width: 100%;
       padding: 40px 0;
       #app {border-radius: 8px;}
@@ -152,6 +163,7 @@ export default {
 
   #app {
     position: relative;
+    min-width: 345px;
     max-width: 414px;
     height: 100%;
     padding: 0 15px;
@@ -159,10 +171,15 @@ export default {
     display: flex;
     flex-flow: column nowrap;
     background: #FFFFFF;
+    @media screen and (min-width: 494px) {
+      max-width: 444px;
+      padding: 15px 30px;
+    }
   }
 
   header {
     width: 100%;
+    min-height: 140px;
     height: 140px;
     display: flex;
     flex-direction: column;
@@ -189,6 +206,7 @@ export default {
       font-size: 14px;
       line-height: 24px;
       margin: 0;
+      text-align: center;
     }
   }
 
@@ -224,6 +242,7 @@ export default {
         &[type='submit'] {
           background: #490C66;
           color: #FFFFFF;
+          font-weight: 500;
           text-transform: uppercase;
           margin-bottom: 0;
           cursor: pointer;

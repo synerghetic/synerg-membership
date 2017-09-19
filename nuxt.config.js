@@ -6,7 +6,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Devenez adhérent à Synerg\'hetic' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { 'http-equiv': 'Cache-control', content: 'public, max-age=604800' },
-      { name: 'theme-color', content: '#ffffff' }
+      { name: 'theme-color', content: '#490C66' }
     ],
     link: [
       { rel: 'stylesheet', href: '/css/normalize.css' },
