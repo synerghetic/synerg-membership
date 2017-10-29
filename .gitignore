@@ -1,6 +1,4 @@
-.nuxt
 dist
 node_modules
-*.log
-package-lock.json
-yarn.lock
+npm-debug.log
+.sass-cache

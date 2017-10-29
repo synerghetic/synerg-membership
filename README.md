@@ -1,15 +1,5 @@
-# synerg-adhesions [![Build Status](https://travis-ci.org/synerghetic/synerg-membership.svg?branch=master)](https://travis-ci.org/synerghetic/synerg-membership)
+# synerg-adhesions
 
 > Synerg'hetic's own membership online system
 
-## Instructions
-
-`yarn` or `npm i` to download dependencies
-
-`npm run dev` to start the development environment.
-
-`npm run build` to build the */dist* folder.
-
-`npm run start` to start the production environment.
-
-`npm run now` to deploy to [now](https://zeit.co/now) (you'll have to change the name and alias in *package.json*)
+This is a Wordpress Theme used in our internal membership ssytem. The theme works with ACF, Direct Stripe, Contact Form 7 and Flamingo.

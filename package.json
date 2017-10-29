@@ -1,24 +1,25 @@
 {
-  "name": "synerg-membership",
+  "name": "synerg-adhesions",
   "version": "1.0.0",
-  "description": "Synerg'hetic - adhésions",
-  "author": "Seb Dancer-Michel <s.dancermichel@gmail.com>",
-  "private": false,
-  "repository": "https://github.com/synerghetic/synerg-membership",
-  "license": "GPL-3.0",
-  "dependencies": {
-    "node-sass": "^4.5.3",
-    "nuxt": "^1.0.0-rc11",
-    "sass-loader": "^6.0.5"
-  },
-  "now": {
-    "name": "synerg-membership",
-    "alias": "synerg-membership"
-  },
+  "description": "Une plateforme d'adhésions pour les Junior-Entreprises",
+  "author": "Sébastien Dancer-Michel <sebastien.dancer-michel@synerghetic.net>",
+  "license": "MIT",
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "now": "now && now alias"
+    "autoprefixer": "postcss -u autoprefixer -r css/*",
+    "scss": "node-sass --output-style compressed -o css scss",
+    "build:css": "npm run scss && npm run autoprefixer",
+    "watch:css": "onchange \"scss\" -- npm run build:css",
+    "postinstall": "npm run build:css && npm run watch:css",
+    "start": "node --harmony-async-await index",
+    "build": "npm run postinstall"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "browser-sync": "^2.12.8",
+    "micro": "latest",
+    "node-sass": "^3.7.0",
+    "npm-run-all": "^2.1.1",
+    "onchange": "^2.4.0",
+    "postcss-cli": "^2.5.2"
   }
 }
