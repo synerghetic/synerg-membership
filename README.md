@@ -1,4 +1,4 @@
-# synerg-adhesions
+# synerg-membership
 
 > Synerg'hetic's own membership online system
 
